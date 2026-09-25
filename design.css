@@ -1,321 +1,370 @@
-/* =========================
-   GLOBAL RESET
-========================= */
+/* =========================================
+   CLIENT CUSTOMIZATION
+========================================= */
+
+:root {
+
+    /* TEXT */
+    --text-color: #ffffff;
+
+    /* BUTTONS */
+    --button-color: rgba(0, 0, 0, 0.50);
+    --button-hover: rgba(0, 0, 0, 0.75);
+
+    /* GLASS CARD */
+    --card-color: rgba(255, 255, 255, 0.08);
+
+    /* BACKGROUND */
+    --background-color: #111111;
+
+    /* OVERLAY */
+    --overlay-color: rgba(0, 0, 0, 0.45);
+
+    /* CORNERS */
+    --button-radius: 18px;
+    --card-radius: 24px;
+}
+
+/* =========================================
+   RESET
+========================================= */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100%;
-}
+/* =========================================
+   BODY
+========================================= */
 
 body {
+    min-height: 100vh;
+    width: 100%;
+
     font-family: Arial, sans-serif;
+    color: var(--text-color);
+
+    background-color: var(--background-color);
 
     background-image: url("bg.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 20px 0;
 
     overflow-x: hidden;
 }
 
+/* =========================================
+   VIDEO BACKGROUND
+========================================= */
 
-/* =========================
-   MAIN MOBILE CONTAINER
-========================= */
+.background-video {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: var(--overlay-color);
+
+    z-index: -1;
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
 
 .mobile {
     width: 100%;
     max-width: 390px;
-    min-height: 100vh;
 
-    margin: 0 auto;
-
-    padding: 25px 20px;
+    padding: 20px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    background: var(--card-color);
 
     backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: var(--card-radius);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* =========================================
+   PROFILE
+========================================= */
 
-/* =========================
-   PROFILE PICTURE
-   AUTO ADJUSTS TO IMAGE
-========================= */
+.profile {
+    text-align: center;
+    padding: 15px 0 25px;
+}
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
 
 .profile-picture {
     display: block;
 
+    /* Automatically adjusts to the image */
     width: auto;
-    max-width: 100%;
-
     height: auto;
-    max-height: 180px;
 
-    margin: 0 auto 12px;
+    /* Limits the maximum size */
+    max-width: 150px;
+    max-height: 150px;
 
-    border-radius: 0;
-
+    /* Keeps the original image proportions */
     object-fit: contain;
-    object-position: center;
 
-    border: 3px solid white;
+    margin: 0 auto 15px;
+
+    /* Border follows the image dimensions */
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
 
     background: rgba(255, 255, 255, 0.15);
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-
-/* =========================
+/* =========================================
    NAME
-========================= */
+========================================= */
 
-.name {
-    width: 100%;
+.profile h1 {
+    font-size: 2rem;
+    font-weight: 700;
 
-    margin: 5px 0;
-
-    text-align: center;
-
-    font-size: 24px;
-    font-weight: bold;
-
-    color: white;
-
-    overflow-wrap: anywhere;
+    margin-bottom: 6px;
 }
 
-
-/* =========================
+/* =========================================
    SUBTITLE
-========================= */
+========================================= */
 
 .subtitle {
-    width: 100%;
-
-    margin: 0 0 18px;
-
-    text-align: center;
-
     font-size: 14px;
-
-    color: white;
-
-    overflow-wrap: anywhere;
+    opacity: 0.85;
 }
 
+/* =========================================
+   CONTENT
+========================================= */
 
-/* =========================
-   ABOUT SECTION
-========================= */
+.content {
+    width: 100%;
+}
+
+/* =========================================
+   ABOUT CARD
+========================================= */
 
 .about {
-    width: 100%;
+    padding: 22px;
 
-    padding: 14px 16px;
-
-    margin-bottom: 15px;
-
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.15);
-
-    backdrop-filter: blur(1px);
-
-    color: white;
+    margin-bottom: 18px;
 
     text-align: center;
 
-    line-height: 1.5;
+    background: rgba(255, 255, 255, 0.10);
 
-    overflow-wrap: anywhere;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: var(--card-radius);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
+/* =========================================
+   ABOUT TITLE
+========================================= */
 
-/* =========================
-   LINKS CONTAINER
-========================= */
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   ABOUT TEXT
+========================================= */
+
+.about p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* =========================================
+   LINKS
+========================================= */
 
 .links {
     width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-
-    /*
-       Keeps every link the same width.
-       Adding/removing links only changes
-       the height of the page.
-    */
-
-    flex-shrink: 0;
 }
 
-
-/* =========================
-   LINK BUTTONS
-========================= */
+/* =========================================
+   BUTTON
+========================================= */
 
 .button {
-    width: 100%;
-
-    min-height: 48px;
-
-    padding: 13px 16px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    gap: 10px;
+    gap: 14px;
 
-    border-radius: 12px;
-
-    text-decoration: none;
-
-    color: white;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    backdrop-filter: blur(1px);
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    transition: background 0.2s ease;
-
-    /*
-       Prevents long names from
-       breaking the layout.
-    */
-
-    overflow: hidden;
-
-    overflow-wrap: anywhere;
-
-    flex-shrink: 0;
-}
-
-
-/* =========================
-   BUTTON HOVER
-========================= */
-
-.button:hover {
-    background: rgba(255, 255, 255, 0.30);
-}
-
-
-/* =========================
-   BUTTON ICON
-========================= */
-
-.button i {
-    flex-shrink: 0;
-
-    font-size: 18px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
     width: 100%;
 
+    min-height: 65px;
+
+    margin-bottom: 14px;
+
+    padding: 15px 20px;
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    border-radius: var(--button-radius);
+
+    background: var(--button-color);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button:hover {
+    background: var(--button-hover);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   ICONS
+========================================= */
+
+.button i {
+    font-size: 28px;
+
+    width: 28px;
+    min-width: 28px;
+
+    text-align: center;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
     margin-top: 20px;
 
     text-align: center;
 
     font-size: 12px;
 
-    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.75;
 }
 
-
-/* =========================
-   PHONES
-   400PX OR BELOW
-========================= */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 400px) {
 
     .mobile {
-        width: 100%;
-
-        padding: 22px 16px;
+        padding: 18px;
     }
 
     .profile-picture {
-        max-height: 150px;
+        width: 100px;
+        height: 100px;
     }
 
-    .name {
-        font-size: 22px;
+    .profile h1 {
+        font-size: 1.8rem;
     }
 
-    .subtitle {
-        font-size: 13px;
+    .about h2 {
+        font-size: 1.7rem;
     }
 
     .button {
-        width: 100%;
+        min-height: 58px;
+        font-size: 16px;
+    }
 
-        min-height: 46px;
-
-        padding: 12px 14px;
-
-        font-size: 14px;
+    .button i {
+        font-size: 24px;
     }
 }
 
-
-/* =========================
-   VERY SMALL PHONES
-   350PX OR BELOW
-========================= */
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
 
 @media (max-width: 350px) {
 
     .mobile {
-        padding: 20px 14px;
+        padding: 15px;
     }
 
     .profile-picture {
-        max-height: 130px;
+        width: 85px;
+        height: 85px;
     }
 
-    .name {
-        font-size: 20px;
-    }
-
-    .subtitle {
-        font-size: 12px;
+    .profile h1 {
+        font-size: 1.5rem;
     }
 
     .button {
-        width: 100%;
-
-        min-height: 44px;
-
-        padding: 11px 12px;
-
-        font-size: 13px;
+        min-height: 52px;
+        font-size: 15px;
     }
 }
