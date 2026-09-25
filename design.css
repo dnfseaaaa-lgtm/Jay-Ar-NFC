@@ -1,5 +1,6 @@
-/* =========================================
+ /* =========================================
    CLIENT CUSTOMIZATION
+
    Change these values to customize the card
 ========================================= */
 
@@ -8,22 +9,18 @@
     /* TEXT */
     --text-color: #ffffff;
 
-
     /* BUTTONS */
     --button-color: rgba(0, 0, 0, 0.60);
     --button-hover: rgba(0, 0, 0, 0.80);
 
-
     /* GLASS CARD */
     --card-color: rgba(255, 255, 255, 0.12);
-
 
     /* BACKGROUND */
     --background-color: #928686;
 
     /* Background darkness */
     --overlay-color: rgba(0, 0, 0, 0.35);
-
 
     /* CORNERS */
     --button-radius: 14px;
@@ -47,32 +44,23 @@
 ========================================= */
 
 body {
-
     min-height: 100vh;
-
     width: 100%;
 
     font-family: Arial, sans-serif;
-
     color: var(--text-color);
 
     background-color: var(--background-color);
 
     /* BACKGROUND PICTURE */
     background-image: url("bg.jpg");
-
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     overflow-x: hidden;
@@ -84,7 +72,6 @@ body {
 ========================================= */
 
 .background-video {
-
     position: fixed;
 
     top: 0;
@@ -104,7 +91,6 @@ body {
 ========================================= */
 
 .background-overlay {
-
     position: fixed;
 
     top: 0;
@@ -124,9 +110,7 @@ body {
 ========================================= */
 
 .mobile {
-
     width: 100%;
-
     max-width: 390px;
 
     min-height: 100vh;
@@ -134,14 +118,13 @@ body {
     padding: 20px;
 
     display: flex;
-
     flex-direction: column;
 
     background: var(--card-color);
 
-    backdrop-filter: blur(2px);
-
-    -webkit-backdrop-filter: blur(10px);
+    /* VERY LOW BLUR */
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 
     border-radius: var(--card-radius);
 }
@@ -152,7 +135,6 @@ body {
 ========================================= */
 
 .profile {
-
     width: 100%;
 
     text-align: center;
@@ -165,23 +147,33 @@ body {
    PROFILE PICTURE
 ========================================= */
 
-.profile-picture {
+/*
+   The image automatically adjusts to its
+   original proportions.
 
+   Portrait image  = stays portrait
+   Landscape image = stays landscape
+   Square image    = stays square
+
+   You don't need to change the CSS
+   when changing the client's photo.
+*/
+
+.profile-picture {
     display: block;
 
-    width: 82px;
+    width: auto;
+    max-width: 100%;
 
-    height: 110px;
+    height: auto;
+    max-height: 180px;
 
     margin: 0 auto 12px;
 
-    
+    border-radius: 0;
 
-    /*
-       COVER makes the picture fill
-       the circle.
-    */
     object-fit: contain;
+    object-position: center;
 
     border: 3px solid white;
 
@@ -197,7 +189,6 @@ body {
 ========================================= */
 
 .profile h1 {
-
     font-size: 24px;
 
     line-height: 1.2;
@@ -213,7 +204,6 @@ body {
 ========================================= */
 
 .subtitle {
-
     margin: 0;
 
     font-size: 14px;
@@ -229,7 +219,6 @@ body {
 ========================================= */
 
 .content {
-
     width: 100%;
 }
 
@@ -239,7 +228,6 @@ body {
 ========================================= */
 
 .about {
-
     width: 100%;
 
     padding: 18px;
@@ -250,9 +238,9 @@ body {
 
     border-radius: var(--card-radius);
 
-    backdrop-filter: blur(10px);
-
-    -webkit-backdrop-filter: blur(10px);
+    /* LOW BLUR */
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 
     text-align: center;
 }
@@ -263,7 +251,6 @@ body {
 ========================================= */
 
 .about h2 {
-
     font-size: 19px;
 
     line-height: 1.3;
@@ -277,7 +264,6 @@ body {
 ========================================= */
 
 .about p {
-
     font-size: 14px;
 
     line-height: 1.5;
@@ -291,7 +277,6 @@ body {
 ========================================= */
 
 .links {
-
     width: 100%;
 }
 
@@ -301,11 +286,9 @@ body {
 ========================================= */
 
 .button {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 10px;
@@ -334,9 +317,9 @@ body {
         transform 0.2s ease,
         background 0.2s ease;
 
-    backdrop-filter: blur(5px);
-
-    -webkit-backdrop-filter: blur(5px);
+    /* LOW BLUR */
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
 }
 
 
@@ -345,7 +328,6 @@ body {
 ========================================= */
 
 .button:hover {
-
     background: var(--button-hover);
 
     transform: translateY(-2px);
@@ -357,7 +339,6 @@ body {
 ========================================= */
 
 .button:active {
-
     transform: scale(0.98);
 }
 
@@ -367,11 +348,9 @@ body {
 ========================================= */
 
 .button i {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     width: 24px;
@@ -389,7 +368,6 @@ body {
 ========================================= */
 
 footer {
-
     margin-top: auto;
 
     padding-top: 20px;
@@ -409,7 +387,6 @@ footer {
 @media (max-width: 400px) {
 
     .mobile {
-
         width: 100%;
 
         min-height: 100vh;
@@ -421,37 +398,41 @@ footer {
 
 
     .profile {
-
         padding: 12px 0 18px;
     }
 
 
+    /* AUTOMATIC IMAGE SIZE */
     .profile-picture {
+        width: auto;
 
-        width: 95px;
+        max-width: 100%;
 
-        height: 95px;
+        height: auto;
+
+        max-height: 150px;
+
+        margin-bottom: 10px;
 
         border-width: 3px;
 
-        margin-bottom: 10px;
+        border-radius: 0;
+
+        object-fit: contain;
     }
 
 
     .profile h1 {
-
         font-size: 22px;
     }
 
 
     .subtitle {
-
         font-size: 13px;
     }
 
 
     .about {
-
         padding: 16px;
 
         margin-bottom: 15px;
@@ -459,19 +440,16 @@ footer {
 
 
     .about h2 {
-
         font-size: 18px;
     }
 
 
     .about p {
-
         font-size: 13px;
     }
 
 
     .button {
-
         min-height: 50px;
 
         padding: 13px;
@@ -481,13 +459,11 @@ footer {
 
 
     .button i {
-
         font-size: 19px;
     }
 
 
     footer {
-
         padding-top: 15px;
 
         font-size: 11px;
@@ -502,27 +478,32 @@ footer {
 @media (max-width: 350px) {
 
     .mobile {
-
         padding: 15px 12px;
     }
 
 
+    /* AUTOMATIC IMAGE SIZE */
     .profile-picture {
+        width: auto;
 
-        width: 85px;
+        max-width: 100%;
 
-        height: 85px;
+        height: auto;
+
+        max-height: 130px;
+
+        border-radius: 0;
+
+        object-fit: contain;
     }
 
 
     .profile h1 {
-
         font-size: 20px;
     }
 
 
     .button {
-
         min-height: 48px;
 
         padding: 12px;
