@@ -1,163 +1,56 @@
- /* =========================================
-   CLIENT CUSTOMIZATION
-
-   Change these values to customize the card
-========================================= */
-
-:root {
-
-    /* TEXT */
-    --text-color: #ffffff;
-
-    /* BUTTONS */
-    --button-color: rgba(0, 0, 0, 0.60);
-    --button-hover: rgba(0, 0, 0, 0.80);
-
-    /* GLASS CARD */
-    --card-color: rgba(255, 255, 255, 0.12);
-
-    /* BACKGROUND */
-    --background-color: #928686;
-
-    /* Background darkness */
-    --overlay-color: rgba(0, 0, 0, 0.35);
-
-    /* CORNERS */
-    --button-radius: 14px;
-    --card-radius: 20px;
-}
-
-
-/* =========================================
-   RESET
-========================================= */
+/* =========================
+   GLOBAL RESET
+========================= */
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-
-/* =========================================
-   BODY
-========================================= */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
 
 body {
-    min-height: 100vh;
-    width: 100%;
-
     font-family: Arial, sans-serif;
-    color: var(--text-color);
 
-    background-color: var(--background-color);
-
-    /* BACKGROUND PICTURE */
     background-image: url("bg.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     overflow-x: hidden;
 }
 
 
-/* =========================================
-   OPTIONAL VIDEO BACKGROUND
-========================================= */
-
-.background-video {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: -2;
-}
-
-
-/* =========================================
-   BACKGROUND OVERLAY
-========================================= */
-
-.background-overlay {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: var(--overlay-color);
-
-    z-index: -1;
-}
-
-
-/* =========================================
-   MAIN MOBILE CARD
-========================================= */
+/* =========================
+   MAIN MOBILE CONTAINER
+========================= */
 
 .mobile {
     width: 100%;
     max-width: 390px;
-
     min-height: 100vh;
 
-    padding: 20px;
+    margin: 0 auto;
+
+    padding: 25px 20px;
 
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    background: var(--card-color);
-
-    /* VERY LOW BLUR */
     backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-
-    border-radius: var(--card-radius);
 }
 
 
-/* =========================================
-   PROFILE SECTION
-========================================= */
-
-.profile {
-    width: 100%;
-
-    text-align: center;
-
-    padding: 15px 0 20px;
-}
-
-
-/* =========================================
+/* =========================
    PROFILE PICTURE
-========================================= */
-
-/*
-   The image automatically adjusts to its
-   original proportions.
-
-   Portrait image  = stays portrait
-   Landscape image = stays landscape
-   Square image    = stays square
-
-   You don't need to change the CSS
-   when changing the client's photo.
-*/
+   AUTO ADJUSTS TO IMAGE
+========================= */
 
 .profile-picture {
     display: block;
@@ -179,335 +72,250 @@ body {
 
     background: rgba(255, 255, 255, 0.15);
 
-    box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 
-/* =========================================
-   PROFILE NAME
-========================================= */
+/* =========================
+   NAME
+========================= */
 
-.profile h1 {
+.name {
+    width: 100%;
+
+    margin: 5px 0;
+
+    text-align: center;
+
     font-size: 24px;
+    font-weight: bold;
 
-    line-height: 1.2;
+    color: white;
 
-    margin: 0 0 5px;
-
-    font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 
-/* =========================================
-   PROFILE SUBTITLE
-========================================= */
+/* =========================
+   SUBTITLE
+========================= */
 
 .subtitle {
-    margin: 0;
+    width: 100%;
+
+    margin: 0 0 18px;
+
+    text-align: center;
 
     font-size: 14px;
 
-    line-height: 1.4;
+    color: white;
 
-    opacity: 0.85;
+    overflow-wrap: anywhere;
 }
 
 
-/* =========================================
-   CONTENT
-========================================= */
-
-.content {
-    width: 100%;
-}
-
-
-/* =========================================
+/* =========================
    ABOUT SECTION
-========================================= */
+========================= */
 
 .about {
     width: 100%;
 
-    padding: 18px;
+    padding: 14px 16px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
-    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
 
-    border-radius: var(--card-radius);
+    background: rgba(255, 255, 255, 0.15);
 
-    /* LOW BLUR */
     backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+
+    color: white;
 
     text-align: center;
-}
-
-
-/* =========================================
-   ABOUT TITLE
-========================================= */
-
-.about h2 {
-    font-size: 19px;
-
-    line-height: 1.3;
-
-    margin-bottom: 8px;
-}
-
-
-/* =========================================
-   ABOUT TEXT
-========================================= */
-
-.about p {
-    font-size: 14px;
 
     line-height: 1.5;
 
-    opacity: 0.9;
+    overflow-wrap: anywhere;
 }
 
 
-/* =========================================
-   LINKS
-========================================= */
+/* =========================
+   LINKS CONTAINER
+========================= */
 
 .links {
     width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    /*
+       Keeps every link the same width.
+       Adding/removing links only changes
+       the height of the page.
+    */
+
+    flex-shrink: 0;
 }
 
 
-/* =========================================
-   BUTTON
-========================================= */
+/* =========================
+   LINK BUTTONS
+========================= */
 
 .button {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 13px 16px;
+
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
 
-    width: 100%;
-
-    min-height: 52px;
-
-    padding: 14px 16px;
-
-    margin-bottom: 12px;
-
-    border-radius: var(--button-radius);
-
-    background: var(--button-color);
-
-    color: var(--text-color);
+    border-radius: 12px;
 
     text-decoration: none;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    backdrop-filter: blur(1px);
 
     font-size: 15px;
 
     font-weight: 500;
 
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+    transition: background 0.2s ease;
 
-    /* LOW BLUR */
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    /*
+       Prevents long names from
+       breaking the layout.
+    */
+
+    overflow: hidden;
+
+    overflow-wrap: anywhere;
+
+    flex-shrink: 0;
 }
 
 
-/* =========================================
+/* =========================
    BUTTON HOVER
-========================================= */
+========================= */
 
 .button:hover {
-    background: var(--button-hover);
-
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.30);
 }
 
 
-/* =========================================
-   BUTTON PRESS
-========================================= */
-
-.button:active {
-    transform: scale(0.98);
-}
-
-
-/* =========================================
-   SOCIAL / CONTACT ICONS
-========================================= */
+/* =========================
+   BUTTON ICON
+========================= */
 
 .button i {
-    display: flex;
+    flex-shrink: 0;
 
-    align-items: center;
-    justify-content: center;
-
-    width: 24px;
-
-    min-width: 24px;
-
-    font-size: 20px;
-
-    text-align: center;
+    font-size: 18px;
 }
 
 
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+========================= */
 
-footer {
-    margin-top: auto;
+.footer {
+    width: 100%;
 
-    padding-top: 20px;
+    margin-top: 20px;
 
     text-align: center;
 
     font-size: 12px;
 
-    opacity: 0.7;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 
-/* =========================================
-   SMALL PHONES
-========================================= */
+/* =========================
+   PHONES
+   400PX OR BELOW
+========================= */
 
 @media (max-width: 400px) {
 
     .mobile {
         width: 100%;
 
-        min-height: 100vh;
-
-        padding: 18px 15px;
-
-        border-radius: 0;
+        padding: 22px 16px;
     }
 
-
-    .profile {
-        padding: 12px 0 18px;
-    }
-
-
-    /* AUTOMATIC IMAGE SIZE */
     .profile-picture {
-        width: auto;
-
-        max-width: 100%;
-
-        height: auto;
-
         max-height: 150px;
-
-        margin-bottom: 10px;
-
-        border-width: 3px;
-
-        border-radius: 0;
-
-        object-fit: contain;
     }
 
-
-    .profile h1 {
+    .name {
         font-size: 22px;
     }
-
 
     .subtitle {
         font-size: 13px;
     }
 
-
-    .about {
-        padding: 16px;
-
-        margin-bottom: 15px;
-    }
-
-
-    .about h2 {
-        font-size: 18px;
-    }
-
-
-    .about p {
-        font-size: 13px;
-    }
-
-
     .button {
-        min-height: 50px;
+        width: 100%;
 
-        padding: 13px;
+        min-height: 46px;
+
+        padding: 12px 14px;
 
         font-size: 14px;
-    }
-
-
-    .button i {
-        font-size: 19px;
-    }
-
-
-    footer {
-        padding-top: 15px;
-
-        font-size: 11px;
     }
 }
 
 
-/* =========================================
+/* =========================
    VERY SMALL PHONES
-========================================= */
+   350PX OR BELOW
+========================= */
 
 @media (max-width: 350px) {
 
     .mobile {
-        padding: 15px 12px;
+        padding: 20px 14px;
     }
 
-
-    /* AUTOMATIC IMAGE SIZE */
     .profile-picture {
-        width: auto;
-
-        max-width: 100%;
-
-        height: auto;
-
         max-height: 130px;
-
-        border-radius: 0;
-
-        object-fit: contain;
     }
 
-
-    .profile h1 {
+    .name {
         font-size: 20px;
     }
 
+    .subtitle {
+        font-size: 12px;
+    }
 
     .button {
-        min-height: 48px;
+        width: 100%;
 
-        padding: 12px;
+        min-height: 44px;
 
-        font-size: 14px;
+        padding: 11px 12px;
+
+        font-size: 13px;
     }
 }
